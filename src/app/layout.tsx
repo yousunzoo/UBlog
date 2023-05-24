@@ -13,7 +13,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 	return (
 		<html lang='ko-KR' className='light'>
 			<body className={noto.className}>
-				<header className='fixed flex w-full px-6 bg-white/80 dark:bg-black/80 border-b border-slate-200 dark:border-zinc-700 justify-between items-center p-4'>
+				<header className='fixed flex w-full items-center justify-between border-b border-slate-200 bg-white/80 p-4 px-6 dark:border-zinc-700 dark:bg-black/80'>
 					<h1 className='text-2xl font-bold text-black dark:text-white'>
 						<Link href='/'>{metadata.title}</Link>
 					</h1>
