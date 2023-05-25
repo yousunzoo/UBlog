@@ -5,3 +5,9 @@
 :root {
 	transition: color 0.2s ease-out, background 0.2s ease-out;
 }
+
+html,
+body {
+	height: 100vh;
+	overflow-y: auto;
+}

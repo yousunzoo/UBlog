@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import './globals.css';
 import { Noto_Sans } from 'next/font/google';
-
+import Image from 'next/image';
 const noto = Noto_Sans({ weight: '500', subsets: ['latin'] });
 
 export const metadata = {
@@ -12,29 +12,35 @@ export const metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
 	return (
 		<html lang='ko-KR' className='light'>
-			<body className={noto.className}>
-				<header className='fixed flex w-full items-center justify-between border-b border-slate-200 bg-white/80 p-4 px-6 dark:border-zinc-700 dark:bg-black/80'>
-					<h1 className='text-2xl font-bold text-black dark:text-white'>
-						<Link href='/'>{metadata.title}</Link>
-					</h1>
-					<nav>
-						<ul className='flex text-slate-500 dark:text-gray-50'>
-							<li className='mx-2'>
-								<Link href='/'>Home</Link>
-							</li>
-							<li className='mx-2'>
-								<Link href='/about'>About</Link>
-							</li>
-							<li className='mx-2'>
-								<Link href='/posts'>Posts</Link>
-							</li>
-							<li className='mx-2'>
-								<Link href='/contact'>Contact</Link>
-							</li>
-						</ul>
-					</nav>
+			<head>
+				<link rel='shortcut icon' href='/icons/favicon.ico' />
+			</head>
+			<body className={`${noto.className} mx-auto flex w-full max-w-screen-2xl flex-col`}>
+				<header className='fixed left-0 top-0 z-10 w-full border-b border-slate-200 bg-white/80 px-6 py-3 dark:border-zinc-700 dark:bg-black/80'>
+					<div className='mx-auto flex max-w-screen-2xl items-center justify-between'>
+						<Link href='/' className='flex items-center gap-1 text-2xl font-bold text-black dark:text-white'>
+							<Image src='/images/logo.png' alt='logo' width={50} height={50} />
+							<h1>{metadata.title}</h1>
+						</Link>
+						<nav>
+							<ul className='flex text-slate-500 dark:text-gray-50'>
+								<li className='mx-2'>
+									<Link href='/'>Home</Link>
+								</li>
+								<li className='mx-2'>
+									<Link href='/about'>About</Link>
+								</li>
+								<li className='mx-2'>
+									<Link href='/posts'>Posts</Link>
+								</li>
+								<li className='mx-2'>
+									<Link href='/contact'>Contact</Link>
+								</li>
+							</ul>
+						</nav>
+					</div>
 				</header>
-				{children}
+				<main className='pt-[65px]'>{children}</main>
 			</body>
 		</html>
 	);
