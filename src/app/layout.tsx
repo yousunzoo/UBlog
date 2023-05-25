@@ -1,6 +1,7 @@
 import './globals.css';
 import { Noto_Sans } from 'next/font/google';
 import Header from '@/components/Header';
+import Footer from '@/components/Footer';
 const noto = Noto_Sans({ weight: '500', subsets: ['latin'] });
 
 export const metadata = {
@@ -16,7 +17,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 			</head>
 			<body className={`${noto.className} mx-auto flex w-full max-w-screen-2xl flex-col`}>
 				<Header title={metadata.title} />
-				<main className='pt-[67px]'>{children}</main>
+				<main className='grow pt-[67px]'>{children}</main>
+				<Footer />
 			</body>
 		</html>
 	);
