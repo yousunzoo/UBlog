@@ -21,15 +21,6 @@ function MarkdownViewer({ content }: { content: string }) {
 						<code className={className} {...props} />
 					);
 				},
-				img: (image) => (
-					<Image
-						className='max-h-60 w-full object-cover'
-						src={image.src || ''}
-						alt={image.alt || ''}
-						width={500}
-						height={300}
-					/>
-				),
 			}}>
 			{content}
 		</ReactMarkdown>
