@@ -8,7 +8,7 @@ function PostCard({ post }: Props) {
 	const { title, path, description, date, category } = post;
 	return (
 		<Link href={`/posts/${path}`}>
-			<article className='overflow-hidden rounded-md shadow-lg'>
+			<article className='overflow-hidden rounded-md shadow-md hover:shadow-xl'>
 				<div className='relative h-[200px] w-full'>
 					<Image className='object-cover' src={`/images/posts/${path}.png`} alt={title} fill />
 					<span className='absolute left-4 top-2 my-2 rounded-xl bg-green-500 px-3 py-1 text-sm text-white'>

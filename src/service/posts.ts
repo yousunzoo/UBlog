@@ -21,3 +21,8 @@ export async function getFeaturedPosts(): Promise<Post[]> {
 	const posts = await getAllPosts();
 	return posts.filter((post) => post.featured);
 }
+
+export async function getNonFeaturedPosts(): Promise<Post[]> {
+	const posts = await getAllPosts();
+	return posts.filter((post) => !post.featured);
+}
