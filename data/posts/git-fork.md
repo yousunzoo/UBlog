@@ -45,7 +45,7 @@ Repository 명은 복사하고자 하는 repository와 다르게 하는게 좋�
 
 #### 2\. Git Bash를 열어 기존 Repository를 bare clone한다.
 
-```
+```bash
 $ git clone --bare https://github.com/yousunzoo/old-repository.git
 ```
 
@@ -57,7 +57,7 @@ $ git clone --bare https://github.com/yousunzoo/old-repository.git
 
 #### 3.새로운 Repository로 기존 Repository 파일들과 .git 폴더까지 Mirror-push 한다.
 
-```
+```bash
 $ cd old-repository.git
 $ git push --mirror https://github.com/yousunzoo/new-repository.git
 ```
@@ -68,7 +68,7 @@ $ git push --mirror https://github.com/yousunzoo/new-repository.git
 
 #### 4\. 로컬 저장소에서 기존 Repository 삭제
 
-```
+```bash
 $ cd ..
 $ rm -rf old-repository.git
 ```

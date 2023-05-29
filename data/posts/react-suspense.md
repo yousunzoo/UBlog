@@ -22,9 +22,9 @@ Suspense 는 Promise 를 throw한다. Promise가 resolve 되거나 reject 될 �
 
 ### ⚛️ Suspense 기본 문법
 
-```
+```jsx
 <Suspense fallback={<Loading />}>
-  <SomeComponent />
+	<SomeComponent />
 </Suspense>
 ```
 

@@ -4,7 +4,7 @@ input의 type을 number로 지정하지 않은 상태에서, input의 값이 num
 
 숫자가 아닌 값을 Number로 형변환해주면 NaN이 나오기 때문에, typeof Number(value) === 'NaN'을 시도해봤다.
 
-```
+```js
 console.log(Number('123eee')); // NaN
 console.log(typeof Number('123eee')); // "number"
 ```
@@ -29,11 +29,11 @@ isNaN의 인수가 Number 타입이 아닌 경우, isNaN은 인수를 Number 타
 
 그리고 인수가 undefined일 경우에는 Number(undefined)으로 형변환하면 결국 NaN이 되어 true를 반환한다.
 
-undefined 자료형을 신경쓰려면 **Number.isNaN()**을 사용하면 된다.
+undefined 자료형을 신경쓰려면 **Number.isNaN()** 을 사용하면 된다.
 
-```
-isNaN(undefined) // true
-Number.isNaN(undefined) // false
+```js
+isNaN(undefined); // true
+Number.isNaN(undefined); // false
 ```
 
 ---
@@ -44,35 +44,35 @@ Number.isNaN(undefined) // false
 
 Object.is는 첫번째 인자와 두번째 인자가 같은 값인지를 결정한다.
 
-```
-Object.is('foo', 'foo');     // true
-Object.is(window, window);   // true
+```js
+Object.is('foo', 'foo'); // true
+Object.is(window, window); // true
 
-Object.is('foo', 'bar');     // false
-Object.is([], []);           // false
+Object.is('foo', 'bar'); // false
+Object.is([], []); // false
 
 var test = { a: 1 };
-Object.is(test, test);       // true
+Object.is(test, test); // true
 
-Object.is(null, null);       // true
+Object.is(null, null); // true
 
 // 특별한 경우
-Object.is(0, -0);            // false
-Object.is(-0, -0);           // true
-Object.is(NaN, 0/0);         // true
+Object.is(0, -0); // false
+Object.is(-0, -0); // true
+Object.is(NaN, 0 / 0); // true
 ```
 
 #### 예제에 적용시킨 코드
 
-```
-  const onKeyDown = (e) => {
-    if (e.key === 'Enter') {
-    // 빈 문자열은 숫자형으로 변환시 0 반환!
-      if (+seconds.current.value === 0) return
-      setIsClicked(true)
-      Object.is(NaN, +seconds.current.value) ? setIsCorrect(false) : setIsCorrect(true)
-    }
-  }
+```js
+const onKeyDown = (e) => {
+	if (e.key === 'Enter') {
+		// 빈 문자열은 숫자형으로 변환시 0 반환!
+		if (+seconds.current.value === 0) return;
+		setIsClicked(true);
+		Object.is(NaN, +seconds.current.value) ? setIsCorrect(false) : setIsCorrect(true);
+	}
+};
 ```
 
 ![outro](https://blog.kakaocdn.net/dn/5kk15/btr1UtNDDKv/JKlTC4Okak0ltGp9K0lzkK/img.gif)
