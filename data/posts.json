@@ -24,46 +24,6 @@
 		"featured": false
 	},
 	{
-		"title": "Virtual DOM 동작 원리와 이해",
-		"description": "virtual DOM이 무엇인지, 어떻게 동작하는지 알아보자.",
-		"date": "2023-04-03",
-		"category": "react",
-		"path": "virtual-dom",
-		"featured": false
-	},
-	{
-		"title": "Virtual DOM 동작 원리와 이해",
-		"description": "virtual DOM이 무엇인지, 어떻게 동작하는지 알아보자.",
-		"date": "2023-04-03",
-		"category": "react",
-		"path": "virtual-dom",
-		"featured": false
-	},
-	{
-		"title": "Virtual DOM 동작 원리와 이해",
-		"description": "virtual DOM이 무엇인지, 어떻게 동작하는지 알아보자.",
-		"date": "2023-04-03",
-		"category": "react",
-		"path": "virtual-dom",
-		"featured": false
-	},
-	{
-		"title": "Virtual DOM 동작 원리와 이해",
-		"description": "virtual DOM이 무엇인지, 어떻게 동작하는지 알아보자.",
-		"date": "2023-04-03",
-		"category": "react",
-		"path": "virtual-dom",
-		"featured": false
-	},
-	{
-		"title": "Virtual DOM 동작 원리와 이해",
-		"description": "virtual DOM이 무엇인지, 어떻게 동작하는지 알아보자.",
-		"date": "2023-04-03",
-		"category": "react",
-		"path": "virtual-dom",
-		"featured": false
-	},
-	{
 		"title": "자료형이 NaN인 데이터 추려내기",
 		"description": "NaN은 자기 자신과 일치하지 않는 유일한 값이다. 이를 이용해 자료형이 NaN인 데이터를 추려내보자.",
 		"date": "2023-03-03",
