@@ -5,7 +5,7 @@ import React from 'react';
 const hashtags = ['#ISFP', '#높은_적응력', '#새로운_기술_좋아', '#일단_부딪혀'];
 function Profile() {
 	return (
-		<section className='pt-10 text-center'>
+		<section className='py-10 text-center'>
 			<div className='relative mx-auto mb-6 h-[180px] w-[180px]'>
 				<Image src='/images/profile.jpg' fill className='rounded-full object-cover' alt='Profile image' />
 			</div>
