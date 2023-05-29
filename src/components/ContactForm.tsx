@@ -17,8 +17,8 @@ function ContactForm() {
 		<>
 			<form
 				onSubmit={handleSubmit((data) => {
-					const { name, email, subject, message } = data;
-					sendContactEmail({ name, email, subject, message })
+					const { name, from, subject, message } = data;
+					sendContactEmail({ name, from, subject, message })
 						.then(() => {
 							setBanner({
 								message: '메일이 성공적으로 전송되었습니다.',
@@ -52,17 +52,17 @@ function ContactForm() {
 							{...register('name', { required: true })}
 						/>
 						<p className='mb-4 h-4 text-sm text-red-400'>{errors?.name ? '이름을 입력해주세요.' : ''}</p>
-						<label htmlFor='email'>
+						<label htmlFor='from'>
 							Email <span className='h-4 text-sm text-red-400'>*</span>
 						</label>
 						<input
 							type='text'
-							id='email'
+							id='from'
 							className='mb-2 mt-4 w-full rounded-lg border-2 border-slate-300 p-2 px-4 outline-none focus:border-emerald-700'
 							placeholder='example@test.com'
-							{...register('email', { required: true, pattern: /[a-z0-9]+@[a-z]+\.[a-z]{2,3}/ })}
+							{...register('from', { required: true, pattern: /[a-z0-9]+@[a-z]+\.[a-z]{2,3}/ })}
 						/>
-						<p className='mb-4 h-4 text-sm text-red-400'>{errors?.email ? '올바른 이메일 형식을 입력해주세요.' : ''}</p>
+						<p className='mb-4 h-4 text-sm text-red-400'>{errors?.from ? '올바른 이메일 형식을 입력해주세요.' : ''}</p>
 						<label htmlFor='subject'>Title</label>
 						<input
 							type='text'
