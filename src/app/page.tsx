@@ -5,6 +5,7 @@ export default function Home() {
 	return (
 		<>
 			<Profile />
+			{/* @ts-expect-error Server Component */}
 			<FeaturedPosts />
 		</>
 	);

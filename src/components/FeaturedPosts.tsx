@@ -1,9 +1,9 @@
 import React from 'react';
 import PostsGrid from './PostsGrid';
-import { getAllPosts } from '@/service/posts';
+import { getFeaturedPosts } from '@/service/posts';
 
 async function FeaturedPosts() {
-	const posts = await getAllPosts();
+	const posts = await getFeaturedPosts();
 
 	// 2. 모든 포스트 데이터 보여주기
 	return (
