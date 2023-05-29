@@ -16,7 +16,7 @@ function FilterabledPosts({ posts, categories }: Props) {
 	const filtered = selected === ALL_POSTS ? posts : posts.filter((post) => post.category === selected);
 
 	return (
-		<section className='flex'>
+		<section className='m-4 flex'>
 			<PostsGrid posts={filtered} />
 			<Categories categories={[ALL_POSTS, ...categories]} selected={selected} onClick={setSelected} />
 		</section>
