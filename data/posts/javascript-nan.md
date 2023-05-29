@@ -1,5 +1,3 @@
-자료형이 NaN인 데이터 추려내기
-
 ![Intro](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FPOe5r%2Fbtr1I93J13d%2F4GcuWA5Q13shXiRwQRkxQk%2Fimg.png)
 
 input의 type을 number로 지정하지 않은 상태에서, input의 값이 number인지를 유효성 검사를 하려고 했다.
