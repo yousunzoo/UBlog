@@ -63,7 +63,9 @@ function ContactForm() {
 							{...register('from', { required: true, pattern: /[a-z0-9]+@[a-z]+\.[a-z]{2,3}/ })}
 						/>
 						<p className='mb-4 h-4 text-sm text-red-400'>{errors?.from ? '올바른 이메일 형식을 입력해주세요.' : ''}</p>
-						<label htmlFor='subject'>Title</label>
+						<label htmlFor='subject'>
+							Title <span className='h-4 text-sm text-red-400'>*</span>
+						</label>
 						<input
 							type='text'
 							id='subject'
