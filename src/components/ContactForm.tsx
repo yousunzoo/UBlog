@@ -9,7 +9,7 @@ function ContactForm() {
 	const {
 		register,
 		handleSubmit,
-		watch,
+		reset,
 		formState: { errors },
 	} = useForm();
 
@@ -24,16 +24,19 @@ function ContactForm() {
 								message: '메일이 성공적으로 전송되었습니다.',
 								state: 'success',
 							});
+							reset();
 						})
 						.catch(() => {
 							setBanner({
 								message: '메일 전송에 실패했습니다. 다시 시도해주세요.',
 								state: 'error',
 							});
+						})
+						.finally(() => {
+							setTimeout(() => {
+								setBanner(null);
+							}, 3000);
 						});
-					setTimeout(() => {
-						setBanner(null);
-					}, 3000);
 				})}
 				className='mx-auto max-w-[800px] rounded-lg p-12 shadow-lg'>
 				<div className='flex justify-between'>
