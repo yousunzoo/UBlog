@@ -44,7 +44,7 @@
 		"description": "React.memo와 useMemo의 차이점을 알아보자.",
 		"date": "2023-03-23",
 		"category": "react",
-		"path": "react-memo-usememo",
+		"path": "react-memo",
 		"featured": false
 	},
 	{
