@@ -5,13 +5,13 @@ import React from 'react';
 const hashtags = ['#ISFP', '#높은_적응력', '#새로운_기술_좋아', '#일단_부딪혀'];
 function Profile() {
 	return (
-		<section className='py-10 text-center'>
+		<section className='py-10 text-center dark:text-white'>
 			<div className='relative mx-auto mb-6 h-[180px] w-[180px]'>
 				<Image src='/images/profile.jpg' fill className='rounded-full object-cover' alt='Profile image' />
 			</div>
 			<h2 className='mb-2 text-2xl font-bold'>yousunzoo</h2>
 			<p className='mb-2 italic'>웹 프론트엔드 개발자</p>
-			<p className='mb-2 break-keep text-slate-600'>
+			<p className='mb-2 break-keep text-slate-600 dark:text-slate-300'>
 				어려운 문제를 마주쳐도 포기하지 않고 한 걸음씩 나아가며 성장하기! 😊
 			</p>
 			<ul className='mb-8'>

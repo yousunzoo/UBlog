@@ -18,7 +18,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 			<head>
 				<link rel='shortcut icon' href='/icons/favicon.ico' />
 			</head>
-			<body className={`${noto.className} mx-auto flex w-full max-w-screen-2xl flex-col`}>
+			<body className={`${noto.className} mx-auto flex w-full max-w-screen-2xl flex-col dark:bg-slate-900`}>
 				<Header />
 				<main className='mx-auto w-full max-w-screen-2xl grow px-6 py-[100px]'>{children}</main>
 				<Footer />

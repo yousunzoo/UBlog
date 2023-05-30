@@ -38,7 +38,7 @@ function ContactForm() {
 							}, 3000);
 						});
 				})}
-				className='mx-auto max-w-[800px] rounded-lg p-12 shadow-lg'>
+				className='mx-auto max-w-[800px] rounded-lg bg-slate-100 p-12 shadow-lg dark:bg-slate-700 dark:text-white dark:shadow-slate-600'>
 				<div className='flex justify-between'>
 					<div className='w-[47%]'>
 						<label htmlFor='name'>

@@ -4,9 +4,8 @@ import React from 'react';
 
 function ThemeToggleBtn() {
 	const [theme, setTheme] = useToggleMode();
-	console.log(theme);
 	return (
-		<div
+		<button
 			onClick={() =>
 				(setTheme as React.Dispatch<React.SetStateAction<themeType>>)(theme === 'light' ? 'dark' : 'light')
 			}
@@ -19,7 +18,7 @@ function ThemeToggleBtn() {
 				} 'left-1' top-1 h-5 w-5 rounded-full bg-white transition-all`}></div>
 			<span className='z-1'>🌞</span>
 			<span>🌚</span>
-		</div>
+		</button>
 	);
 }
 
