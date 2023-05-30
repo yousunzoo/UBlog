@@ -7,7 +7,7 @@ import ThemeToggleBtn from './ThemeToggleBtn';
 function Header() {
 	const pathname = usePathname();
 	return (
-		<header className='fixed left-0 top-0 z-10 w-full border-b border-slate-200 bg-white/80 px-6 py-2 dark:border-zinc-700 dark:bg-slate-950/90'>
+		<header className='fixed left-0 top-0 z-10 w-full border-b border-slate-200 bg-white/90 px-6 py-2 dark:border-zinc-700 dark:bg-slate-950/90'>
 			<div className='mx-auto flex max-w-screen-2xl items-center justify-between'>
 				<Link href='/' className='flex items-center gap-1 text-2xl font-bold text-emerald-700 dark:text-white'>
 					<Image src='/images/logo.png' alt='logo' width={50} height={50} />
