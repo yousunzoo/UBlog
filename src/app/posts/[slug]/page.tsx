@@ -1,6 +1,8 @@
 import AdjacentPostCard from '@/components/AdjacentPostCard';
 import PostContent from '@/components/PostContent';
+import { getAllPosts } from '@/service/posts';
 import { getPostData } from '@/service/posts';
+import { Metadata } from 'next';
 import Image from 'next/image';
 
 type Props = {
@@ -8,6 +10,15 @@ type Props = {
 		slug: string;
 	};
 };
+
+export async function generateMetadata({ params: { slug } }: Props): Promise<Metadata> {
+	const { title, description } = await getPostData(slug);
+	return {
+		title,
+		description,
+	};
+}
+
 async function PostPage({ params: { slug } }: Props) {
 	// 1. 전달된 slug를 이용해 서버에서 Post를 가져온다.
 	// 2. Post를 이용해 마크다운 뷰어로 렌더링한다.
@@ -28,3 +39,10 @@ async function PostPage({ params: { slug } }: Props) {
 }
 
 export default PostPage;
+
+export async function generateStaticParams() {
+	const posts = await getAllPosts();
+	return posts.map((post) => ({
+		slug: post.path,
+	}));
+}
