@@ -4,7 +4,11 @@ export type themeType = 'dark' | 'light';
 
 export const useToggleMode = () => {
 	const [theme, setTheme] = useState<themeType>(
-		localStorage.getItem('theme') ? (localStorage.getItem('theme') as 'light' | 'dark') : 'light'
+		typeof window !== 'undefined'
+			? localStorage.getItem('theme')
+				? (localStorage.getItem('theme') as 'light' | 'dark')
+				: 'light'
+			: 'light'
 	);
 	const colorTheme = theme === 'light' ? 'dark' : 'light';
 
@@ -14,7 +18,9 @@ export const useToggleMode = () => {
 		root.classList.remove(colorTheme);
 		root.classList.add(theme);
 
-		localStorage.setItem('theme', theme);
+		if (typeof window !== 'undefined') {
+			localStorage.setItem('theme', theme);
+		}
 	}, [theme]);
 
 	return [theme, setTheme];
