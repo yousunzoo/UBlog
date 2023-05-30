@@ -29,7 +29,7 @@
 
 설치는 아래와 같이 입력해서 진행할 수 있다. (모듈 이름이 axios)
 
-```
+```bash
 #yarn
 yarn add axios
 
@@ -39,13 +39,13 @@ npm install axios
 
 모듈이기 때문에, 해당 함수를 사용하려면 import 처리해야 한다.
 
-```
-import axios from 'axios'
+```js
+import axios from 'axios';
 ```
 
 ### 📚 Axios 기본 문법
 
-```
+```js
 axios({
   url: "서버주소",
   method: "get", // POST, PUT, DELETE 등의 요청 유형 선택
@@ -63,7 +63,7 @@ axios({
 
 ### 📚 Axios 응답 데이터
 
-```
+```js
 response.data: {}, // 서버가 제공한 응답(데이터)
 
 response.status: 200, // HTTP 상태 코드 (200~299 사이면 요청 성공, 400~500 사이라면 요청 실패)
@@ -96,7 +96,7 @@ get 메서드에는 2가지 상황이 크게 존재한다.
 1.  단순 데이터(페이지 요청, 지정된 요청) 요청을 수행할 경우
 2.  파라미터 데이터를 포함시키는 경우 (사용자 번호에 따른 조회)
 
-```
+```js
 async function getUser() {
   try {
     const response = await axios.get('/user', {
@@ -118,17 +118,17 @@ post 메서드에는 일반적으로 데이터를 Message Body에 포함시켜 
 
 위에서 봤던 get 메서드에서 params를 사용한 경우와 비슷하게 수행된다.
 
-```
+```js
 async function uploadPost() {
-  try {
-    const response = await axios.post("url", {
-		firstName: 'Seonju',
-		lastName: 'Yoo'
-    })
-    console.log(response);
-  } catch (error) {
-    console.error(error);
-  }
+	try {
+		const response = await axios.post('url', {
+			firstName: 'Seonju',
+			lastName: 'Yoo',
+		});
+		console.log(response);
+	} catch (error) {
+		console.error(error);
+	}
 }
 ```
 
@@ -138,7 +138,7 @@ delete 메서드는 일반적으로 body가 비어있다.
 
 REST 기반 API 프로그램에서 데이터베이스에 저장되어 있는 내용을 삭제하는 목적으로 사용한다.
 
-```
+```js
 async function deletePost() {
   try {
     const response = await axios.delete('/user?ID=12345', {
@@ -162,17 +162,17 @@ query나 params가 많아져서 헤더에 많은 정보를 담을 수 없을 때
 
 put 메서드는 서버 내부적으로 get -> post 과정을 거치기 때문에 post 메서드와 비슷한 형태이다.
 
-```
+```js
 async function editPost() {
-  try {
-    const response = await axios.put("url", {
-        username: "",
-        password: ""
-    })
-    console.log(response);
-  } catch (error) {
-    console.error(error);
-  }
+	try {
+		const response = await axios.put('url', {
+			username: '',
+			password: '',
+		});
+		console.log(response);
+	} catch (error) {
+		console.error(error);
+	}
 }
 ```
 
@@ -186,46 +186,49 @@ async function editPost() {
 
 1\. 프로젝트 폴더에 .env 파일 생성
 
-```
+```js
 # .env
 VITE_SERVER_URL='https://jsonplaceholder.typicode.com'
 ```
 
 2\. axiosConfig.js 파일 내부의 axiosAPI 수정
 
-```
+```js
 export const axiosAPI = axios.create({
-    baseURL: import.meta.env.VITE_SERVER_URL,
-})
+	baseURL: import.meta.env.VITE_SERVER_URL,
+});
 ```
 
 설정이 완료되면 .env 파일에 명시한 서버 주소로 API 요청을 보내게 된다.
 
 3\. 인터셉터 활용하기
 
-```
-axios.interceptors.request.use(request => {
-    console.log(request);
-    // request 관련해서 설정 진행
-    return request;
-}, error => {
-    console.log(error);
-    return Promise.reject(error);
-});
+```js
+axios.interceptors.request.use(
+	(request) => {
+		console.log(request);
+		// request 관련해서 설정 진행
+		return request;
+	},
+	(error) => {
+		console.log(error);
+		return Promise.reject(error);
+	}
+);
 
 axios.interceptors.response.use(
-    (response) => {
-    	// 정상적으로 처리되었을 때의 설정진행
-        if (response.status === 200 || response.status === 201) {
-            return response.data
-        }
-        return response
-    },
-    (error) => {
-        console.log(error)
-        return Promise.reject(error)
-    },
-)
+	(response) => {
+		// 정상적으로 처리되었을 때의 설정진행
+		if (response.status === 200 || response.status === 201) {
+			return response.data;
+		}
+		return response;
+	},
+	(error) => {
+		console.log(error);
+		return Promise.reject(error);
+	}
+);
 ```
 
 인터셉터는 말그대로 요청 혹은 응답을 보내는 과정에서 요청 혹은 응답을 가로채고 특정한 작업을 수정하기 위한 기능이다.
@@ -237,9 +240,9 @@ axios.interceptors.response.use(
 
 인터셉터 처리를 하면 axios 코드를 다음과 같이 줄일 수 있다.
 
-```
+```js
 const createPost = async (post) => {
-    const data = await axios.post(`/posts`, post)
-    return data
-}
+	const data = await axios.post(`/posts`, post);
+	return data;
+};
 ```
