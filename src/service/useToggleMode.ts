@@ -1,9 +1,13 @@
 import { useEffect, useState } from 'react';
 
-export type themeType = 'dark' | 'light';
+export type ThemeType = 'dark' | 'light';
 
-export const useToggleMode = () => {
-	const [theme, setTheme] = useState<themeType>(
+interface UseToggleMode {
+	(): [ThemeType, React.Dispatch<React.SetStateAction<ThemeType>>];
+}
+
+export const useToggleMode: UseToggleMode = () => {
+	const [theme, setTheme] = useState<ThemeType>(
 		typeof window !== 'undefined'
 			? localStorage.getItem('theme')
 				? (localStorage.getItem('theme') as 'light' | 'dark')
@@ -13,8 +17,8 @@ export const useToggleMode = () => {
 	const colorTheme = theme === 'light' ? 'dark' : 'light';
 
 	useEffect(() => {
-		const root = window.document.documentElement;
-
+		const root = window.document.querySelector('#colorBody') as HTMLDivElement;
+		if (!root) return;
 		root.classList.remove(colorTheme);
 		root.classList.add(theme);
 
